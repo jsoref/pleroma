@@ -29,7 +29,7 @@ defmodule Pleroma.Clippy do
       "Lists of Pleroma instances:\n\n- http://distsn.org/pleroma-instances.html\n- https://fediverse.network/pleroma\n- https://the-federation.info/pleroma",
       "Pleroma uses the LitePub protocol - https://litepub.social",
       "To receive more federated posts, subscribe to relays!\n
-- How-to: https://git.pleroma.social/pleroma/pleroma/wikis/Admin%20tasks#relay-managment
+- How-to: https://git.pleroma.social/pleroma/pleroma/wikis/Admin%20tasks#relay-management
 - Relays: https://fediverse.network/activityrelay"
     ]
   end
@@ -91,10 +91,10 @@ defmodule Pleroma.Clippy do
       noclippy_line: noclippy_line
     }
 
-    # surrond one/five line clippy with blank lines around to not fuck up the layout
+    # surround one/five line clippy with blank lines around to not fuck up the layout
     #
     # yes this fix sucks but it's good enough, have you ever seen a release of windows
-    # without some butched features anyway?
+    # without some butchered features anyway?
     lines =
       if length(lines) == 1 or length(lines) == 5 do
         [""] ++ lines ++ [""]

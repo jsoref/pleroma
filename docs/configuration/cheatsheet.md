@@ -462,7 +462,7 @@ config :pleroma, :rate_limit,
 Means that:
 
 1. In 60 seconds, 15 authentication attempts can be performed from the same IP address.
-2. In 1 second, 10 search requests can be performed from the same IP adress by unauthenticated users, while authenticated users can perform 30 search requests per second.
+2. In 1 second, 10 search requests can be performed from the same IP address by unauthenticated users, while authenticated users can perform 30 search requests per second.
 
 Supported rate limiters:
 
@@ -808,7 +808,7 @@ config :quack,
   webhook_url: "https://hooks.slack.com/services/YOUR-API-KEY-HERE"
 ```
 
-See the [Quack Github](https://github.com/azohra/quack) for more details
+See the [Quack GitHub](https://github.com/azohra/quack) for more details
 
 
 
@@ -897,7 +897,7 @@ Authentication / authorization settings.
 
 ### :ldap
 
-Use LDAP for user authentication.  When a user logs in to the Pleroma
+Use LDAP for user authentication.  When a user logs into the Pleroma
 instance, the name and password will be verified by trying to authenticate
 (bind) to an LDAP server.  If a user exists in the LDAP directory but there
 is no account with the same name yet on the Pleroma instance then a new
@@ -1101,7 +1101,7 @@ Control favicons for instances.
 !!! note
     Requires enabled email
 
-* `:purge_after_days` an integer, remove backup achives after N days.
+* `:purge_after_days` an integer, remove backup archives after N days.
 * `:limit_days` an integer, limit user to export not more often than once per N days.
 * `:dir` a string with a path to backup temporary directory or `nil` to let Pleroma choose temporary directory in the following order:
     1. the directory named by the TMPDIR environment variable
@@ -1134,7 +1134,7 @@ config :pleroma, :frontends,
   }
 ```
 
-This would serve the frontend from the the folder at `$instance_static/frontends/pleroma/stable`. You have to copy the frontend into this folder yourself. You can choose the name and ref any way you like, but they will be used by mix tasks to automate installation in the future, the name referring to the project and the ref referring to a commit.
+This would serve the frontend from the folder at `$instance_static/frontends/pleroma/stable`. You have to copy the frontend into this folder yourself. You can choose the name and ref any way you like, but they will be used by mix tasks to automate installation in the future, the name referring to the project and the ref referring to a commit.
 
 ## Ephemeral activities (Pleroma.Workers.PurgeExpiredActivity)
 

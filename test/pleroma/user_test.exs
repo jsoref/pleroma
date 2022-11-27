@@ -221,7 +221,7 @@ defmodule Pleroma.UserTest do
     assert [] = User.get_follow_requests(followed)
   end
 
-  test "follow_all follows mutliple users" do
+  test "follow_all follows multiple users" do
     user = insert(:user)
     followed_zero = insert(:user)
     followed_one = insert(:user)
@@ -245,7 +245,7 @@ defmodule Pleroma.UserTest do
     refute User.following?(user, reverse_blocked)
   end
 
-  test "follow_all follows mutliple users without duplicating" do
+  test "follow_all follows multiple users without duplicating" do
     user = insert(:user)
     followed_zero = insert(:user)
     followed_one = insert(:user)
@@ -310,7 +310,7 @@ defmodule Pleroma.UserTest do
   describe "unfollow/2" do
     setup do: clear_config([:instance, :external_user_synchronization])
 
-    test "unfollow with syncronizes external user" do
+    test "unfollow with synchronizes external user" do
       clear_config([:instance, :external_user_synchronization], true)
 
       followed =
@@ -815,13 +815,13 @@ defmodule Pleroma.UserTest do
 
     @tag capture_log: true
     test "returns nil if no user could be fetched" do
-      {:error, fetched_user} = User.get_or_fetch_by_nickname("nonexistant@social.heldscal.la")
-      assert fetched_user == "not found nonexistant@social.heldscal.la"
+      {:error, fetched_user} = User.get_or_fetch_by_nickname("nonexistent@social.heldscal.la")
+      assert fetched_user == "not found nonexistent@social.heldscal.la"
     end
 
-    test "returns nil for nonexistant local user" do
-      {:error, fetched_user} = User.get_or_fetch_by_nickname("nonexistant")
-      assert fetched_user == "not found nonexistant"
+    test "returns nil for nonexistent local user" do
+      {:error, fetched_user} = User.get_or_fetch_by_nickname("nonexistent")
+      assert fetched_user == "not found nonexistent"
     end
 
     test "updates an existing user, if stale" do
@@ -929,7 +929,7 @@ defmodule Pleroma.UserTest do
       assert cs.valid?
     end
 
-    test "it sets the follower_adress" do
+    test "it sets the follower_address" do
       cs = User.remote_user_changeset(@valid_remote)
       # remote users get a fake local follower address
       assert cs.changes.follower_address ==
@@ -2131,7 +2131,7 @@ defmodule Pleroma.UserTest do
       assert other_user.follower_count == 1
     end
 
-    test "syncronizes the counters with the remote instance for the followed when enabled" do
+    test "synchronizes the counters with the remote instance for the followed when enabled" do
       clear_config([:instance, :external_user_synchronization], false)
 
       user = insert(:user)
@@ -2153,7 +2153,7 @@ defmodule Pleroma.UserTest do
       assert other_user.follower_count == 437
     end
 
-    test "syncronizes the counters with the remote instance for the follower when enabled" do
+    test "synchronizes the counters with the remote instance for the follower when enabled" do
       clear_config([:instance, :external_user_synchronization], false)
 
       user = insert(:user)

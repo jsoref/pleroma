@@ -137,7 +137,7 @@ The `/api/v1/pleroma/admin/*` path is backwards compatible with `/api/pleroma/ad
 
 ## `GET /api/v1/pleroma/admin/users/:nickname/permission_group`
 
-### Get user user permission groups membership
+### Get user permission groups membership
 
 - Params: none
 - Response:
@@ -153,7 +153,7 @@ The `/api/v1/pleroma/admin/*` path is backwards compatible with `/api/pleroma/ad
 
 Note: Available `:permission_group` is currently moderator and admin. 404 is returned when the permission group doesn’t exist.
 
-### Get user user permission groups membership per permission group
+### Get user permission groups membership per permission group
 
 - Params: none
 - Response:
@@ -263,7 +263,7 @@ Note: Available `:permission_group` is currently moderator and admin. 404 is ret
 
 ## `GET /api/v1/pleroma/admin/users/:nickname_or_id`
 
-### Retrive the details of a user
+### Retrieve the details of a user
 
 - Params:
   - `nickname` or `id`
@@ -273,7 +273,7 @@ Note: Available `:permission_group` is currently moderator and admin. 404 is ret
 
 ## `GET /api/v1/pleroma/admin/users/:nickname_or_id/statuses`
 
-### Retrive user's latest statuses
+### Retrieve user's latest statuses
 
 - Params:
   - `nickname` or `id`
@@ -297,7 +297,7 @@ Note: Available `:permission_group` is currently moderator and admin. 404 is ret
 
 ## `GET /api/v1/pleroma/admin/instances/:instance/statuses`
 
-### Retrive instance's latest statuses
+### Retrieve instance's latest statuses
 
 - Params:
   - `instance`: instance name
@@ -321,7 +321,7 @@ Note: Available `:permission_group` is currently moderator and admin. 404 is ret
 
 ## `GET /api/v1/pleroma/admin/statuses`
 
-### Retrives all latest statuses
+### Retrieves all latest statuses
 
 - Params:
   - *optional* `page_size`: number of statuses to return (default is `20`)

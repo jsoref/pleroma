@@ -177,7 +177,7 @@ defmodule Pleroma.ConfigDBTest do
   end
 
   describe "delete/1" do
-    test "error on deleting non existing setting" do
+    test "error on deleting nonexistent setting" do
       {:error, error} = ConfigDB.delete(%{group: ":pleroma", key: ":key"})
       assert error =~ "Config with params %{group: \":pleroma\", key: \":key\"} not found"
     end
@@ -398,7 +398,7 @@ defmodule Pleroma.ConfigDBTest do
              ]
     end
 
-    test "trandformed keyword" do
+    test "transformed keyword" do
       assert ConfigDB.to_elixir_types(a: 1, b: 2, c: "string") == [a: 1, b: 2, c: "string"]
     end
 

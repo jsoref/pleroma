@@ -197,11 +197,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Renamed `:timeout` in `pools` namespace to `:recv_timeout`, old name is deprecated.
 - The `discoverable` field in the `User` struct will now add a NOINDEX metatag to profile pages when false.
 - Users with the `is_discoverable` field set to false will not show up in searches ([bug](https://git.pleroma.social/pleroma/pleroma/-/issues/2301)).
-- Minimum lifetime for ephmeral activities changed to 10 minutes and made configurable (`:min_lifetime` option).
+- Minimum lifetime for ephemeral activities changed to 10 minutes and made configurable (`:min_lifetime` option).
 - Introduced optional dependencies on `ffmpeg`, `ImageMagick`, `exiftool` software packages. Please refer to `docs/installation/optional/media_graphics_packages.md`.
 - <details>
   <summary>API Changes</summary>
-- API: Empty parameter values for integer parameters are now ignored in non-strict validaton mode.
+- API: Empty parameter values for integer parameters are now ignored in non-strict validation mode.
 </details>
 
 ### Removed
@@ -543,7 +543,7 @@ switched to a new configuration mechanism, however it was not officially removed
 - Rate limiter crashes when there is no explicitly specified ip in the config
 - 500 errors when no `Accept` header is present if Static-FE is enabled
 - Instance panel not being updated immediately due to wrong `Cache-Control` headers
-- Statuses posted with BBCode/Markdown having unncessary newlines in Pleroma-FE
+- Statuses posted with BBCode/Markdown having unnecessary newlines in Pleroma-FE
 - OTP: Fix some settings not being migrated to in-database config properly
 - No `Cache-Control` headers on attachment/media proxy requests
 - Character limit enforcement being off by 1
@@ -696,7 +696,7 @@ switched to a new configuration mechanism, however it was not officially removed
 
 ### Fixed
 - Report emails now include functional links to profiles of remote user accounts
-- Not being able to log in to some third-party apps when logged in to MastoFE
+- Not being able to log into some third-party apps when logged into MastoFE
 - MRF: `Delete` activities being exempt from MRF policies
 - OTP releases: Not being able to configure OAuth expired token cleanup interval
 - OTP releases: Not being able to configure HTML sanitization policy
@@ -768,7 +768,7 @@ switched to a new configuration mechanism, however it was not officially removed
 
 ## [1.1.5] - 2019-11-09
 ### Fixed
-- Polls having different numbers in timelines/notifications/poll api endpoints due to cache desyncronization
+- Polls having different numbers in timelines/notifications/poll api endpoints due to cache desynchronization
 - Pleroma API: OAuth token endpoint not being found when ".json" suffix is appended
 
 ### Changed
@@ -849,7 +849,7 @@ curl -Lo ./bin/pleroma_ctl 'https://git.pleroma.social/pleroma/pleroma/raw/devel
 - Rich Media: Parser failing when no TTL can be found by image TTL setters
 - Rich Media: The crawled URL is now spliced into the rich media data.
 - ActivityPub S2S: sharedInbox usage has been mostly aligned with the rules in the AP specification.
-- ActivityPub C2S: follower/following collection pages being inaccessible even when authentifucated if `hide_followers`/ `hide_follows` was set
+- ActivityPub C2S: follower/following collection pages being inaccessible even when authenticated if `hide_followers`/ `hide_follows` was set
 - ActivityPub: Deactivated user deletion
 - ActivityPub: Fix `/users/:nickname/inbox` crashing without an authenticated user
 - MRF: fix ability to follow a relay when AntiFollowbotPolicy was enabled
@@ -863,10 +863,10 @@ curl -Lo ./bin/pleroma_ctl 'https://git.pleroma.social/pleroma/pleroma/raw/devel
 - Reverse Proxy limiting `max_body_length` was incorrectly defined and only checked `Content-Length` headers which may not be sufficient in some circumstances
 
 ### Added
-- Expiring/ephemeral activites. All activities can have expires_at value set, which controls when they should be deleted automatically.
+- Expiring/ephemeral activities. All activities can have expires_at value set, which controls when they should be deleted automatically.
 - Mastodon API: in post_status, the expires_in parameter lets you set the number of seconds until an activity expires. It must be at least one hour.
 - Mastodon API: all status JSON responses contain a `pleroma.expires_at` item which states when an activity will expire. The value is only shown to the user who created the activity. To everyone else it's empty.
-- Configuration: `ActivityExpiration.enabled` controls whether expired activites will get deleted at the appropriate time. Enabled by default.
+- Configuration: `ActivityExpiration.enabled` controls whether expired activities will get deleted at the appropriate time. Enabled by default.
 - Conversations: Add Pleroma-specific conversation endpoints and status posting extensions. Run the `bump_all_conversations` task again to create the necessary data.
 - MRF: Support for priming the mediaproxy cache (`Pleroma.Web.ActivityPub.MRF.MediaProxyWarmingPolicy`)
 - MRF: Support for excluding specific domains from Transparency.

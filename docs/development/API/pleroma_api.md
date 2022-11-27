@@ -124,7 +124,7 @@ The `/api/v1/pleroma/*` path is backwards compatible with `/api/pleroma/*` (`/ap
 * Example response: `{"error": "Invalid password."}`
 
 ## `/api/v1/pleroma/accounts/mfa/backup_codes`
-####  Generstes backup codes MFA for user account.
+####  Generates backup codes MFA for user account.
 * method: `GET`
 * Authentication: required
 * OAuth scope: `write:security`
@@ -347,7 +347,7 @@ Pleroma Conversations have the same general structure that Mastodon Conversation
 
 Conversations have the additional field `recipients` under the `pleroma` key. This holds a list of all the accounts that will receive a message in this conversation.
 
-The status posting endpoint takes an additional parameter, `in_reply_to_conversation_id`, which, when set, will set the visiblity to direct and address only the people who are the recipients of that Conversation.
+The status posting endpoint takes an additional parameter, `in_reply_to_conversation_id`, which, when set, will set the visibility to direct and address only the people who are the recipients of that Conversation.
 
 ⚠ Conversation IDs can be found in direct messages with the `pleroma.direct_conversation_id` key, do not confuse it with `pleroma.conversation_id`.
 

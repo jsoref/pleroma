@@ -21,7 +21,7 @@ Double check your compiler flags in `/etc/portage/make.conf`. If you require any
 
 ### Installing a cron daemon
 
-Gentoo quite pointedly does not come with a cron daemon installed, and as such it is recommended you install one to automate certbot renewals and to allow other system administration tasks to be run automatically. Gentoo has [a whole wide world of cron options](https://wiki.gentoo.org/wiki/Cron) but if you just want A Cron That Works, `emerge --ask virtual/cron` will install the default cron implementation (probably cronie) which will work just fine. For the purpouses of this guide, we will be doing just that.
+Gentoo quite pointedly does not come with a cron daemon installed, and as such it is recommended you install one to automate certbot renewals and to allow other system administration tasks to be run automatically. Gentoo has [a whole wide world of cron options](https://wiki.gentoo.org/wiki/Cron) but if you just want A Cron That Works, `emerge --ask virtual/cron` will install the default cron implementation (probably cronie) which will work just fine. For the purposes of this guide, we will be doing just that.
 
 ### Required ebuilds
 
@@ -56,11 +56,11 @@ Gentoo quite pointedly does not come with a cron daemon installed, and as such i
 
 If you would not like to install the optional packages, remove them from this line.
 
-If you're running this from a low-powered virtual machine, it should work though it will take some time. There were no issues on a VPS with a single core and 1GB of RAM; if you are using an even more limited device and run into issues, you can try creating a swapfile or use a more powerful machine running Gentoo to [cross build](https://wiki.gentoo.org/wiki/Cross_build_environment). If you have a wait ahead of you, now would be a good time to take a break, strech a bit, refresh your beverage of choice and/or get a snack, and reply to Arch users' posts with "I use Gentoo btw" as we do.
+If you're running this from a low-powered virtual machine, it should work though it will take some time. There were no issues on a VPS with a single core and 1GB of RAM; if you are using an even more limited device and run into issues, you can try creating a swapfile or use a more powerful machine running Gentoo to [cross build](https://wiki.gentoo.org/wiki/Cross_build_environment). If you have a wait ahead of you, now would be a good time to take a break, stretch a bit, refresh your beverage of choice and/or get a snack, and reply to Arch users' posts with "I use Gentoo btw" as we do.
 
 ### Install PostgreSQL
 
-[Gentoo  Wiki article](https://wiki.gentoo.org/wiki/PostgreSQL) as well as [PostgreSQL QuickStart](https://wiki.gentoo.org/wiki/PostgreSQL/QuickStart) might be worth a quick glance, as the way Gentoo handles postgres is slightly unusual, with built in capability to have two different databases running for testing and live or whatever other purpouse. While it is still straightforward to install, it does mean that the version numbers used in this guide might change for future updates, so keep an eye out for the output you get from `emerge` to ensure you are using the correct ones.
+[Gentoo  Wiki article](https://wiki.gentoo.org/wiki/PostgreSQL) as well as [PostgreSQL QuickStart](https://wiki.gentoo.org/wiki/PostgreSQL/QuickStart) might be worth a quick glance, as the way Gentoo handles postgres is slightly unusual, with built in capability to have two different databases running for testing and live or whatever other purpose. While it is still straightforward to install, it does mean that the version numbers used in this guide might change for future updates, so keep an eye out for the output you get from `emerge` to ensure you are using the correct ones.
 
 * Install postgresql if you have not done so already:
 
@@ -101,7 +101,7 @@ Not only does this make it much easier to deploy changes you make, as you can co
 
 * Add a new system user for the Pleroma service and set up default directories:
 
-Remove `,wheel` if you do not want this user to be able to use `sudo`, however note that being able to `sudo` as the `pleroma` user will make finishing the insallation and common maintenence tasks somewhat easier:
+Remove `,wheel` if you do not want this user to be able to use `sudo`, however note that being able to `sudo` as the `pleroma` user will make finishing the installation and common maintenance tasks somewhat easier:
 
 ```shell
  # useradd -m -G users,wheel -s /bin/bash pleroma
@@ -224,7 +224,7 @@ If you are using any additional subdomains, such as for a media proxy, you can r
 
 Replace all instances of `example.tld` with your instance's public URL. If for whatever reason you made changes to the port that your pleroma app runs on, be sure that is reflected in your configuration.
 
-Pay special attention to the line that begins with `ssl_ecdh_curve`. It is stongly advised to comment that line out so that OpenSSL will use its full capabilities, and it is also possible you are running OpenSSL 1.0.2 necessitating that you do this.
+Pay special attention to the line that begins with `ssl_ecdh_curve`. It is strongly advised to comment that line out so that OpenSSL will use its full capabilities, and it is also possible you are running OpenSSL 1.0.2 necessitating that you do this.
 
 * Enable and start nginx:
 

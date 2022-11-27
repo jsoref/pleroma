@@ -946,7 +946,7 @@ config :pleroma, :config_description, [
       %{
         key: :direct_message,
         type: :keyword,
-        descpiption: "Direct message settings",
+        description: "Direct message settings",
         children: [
           %{
             key: :enabled,
@@ -974,7 +974,7 @@ config :pleroma, :config_description, [
       %{
         key: :chat_message,
         type: :keyword,
-        descpiption: "Chat message settings",
+        description: "Chat message settings",
         children: [
           %{
             key: :enabled,
@@ -1003,7 +1003,7 @@ config :pleroma, :config_description, [
       %{
         key: :email,
         type: :keyword,
-        descpiption: "Email message settings",
+        description: "Email message settings",
         children: [
           %{
             key: :enabled,
@@ -1350,7 +1350,7 @@ config :pleroma, :config_description, [
             label: "Subject line behavior",
             type: :string,
             description: "Allows changing the default behaviour of subject lines in replies.
-          `email`: copy and preprend re:, as in email,
+          `email`: copy and prepend re:, as in email,
           `masto`: copy verbatim, as in Mastodon,
           `noop`: don't copy the subject.",
             suggestions: ["email", "masto", "noop"]
@@ -1485,7 +1485,7 @@ config :pleroma, :config_description, [
       %{
         key: :invalidation,
         type: :keyword,
-        descpiption: "",
+        description: "",
         suggestions: [
           enabled: true,
           provider: Pleroma.Web.MediaProxy.Invalidation.Script
@@ -2156,7 +2156,7 @@ config :pleroma, :config_description, [
     label: "LDAP",
     type: :group,
     description:
-      "Use LDAP for user authentication. When a user logs in to the Pleroma instance, the name and password" <>
+      "Use LDAP for user authentication. When a user logs into the Pleroma instance, the name and password" <>
         " will be verified by trying to authenticate (bind) to a LDAP server." <>
         " If a user exists in the LDAP directory but there is no account with the same name yet on the" <>
         " Pleroma instance then a new Pleroma account will be created with the same name as the LDAP user name.",
@@ -2481,7 +2481,7 @@ config :pleroma, :config_description, [
         key: :shared_pack_cache_seconds_per_file,
         label: "Shared pack cache s/file",
         type: :integer,
-        descpiption:
+        description:
           "When an emoji pack is shared, the archive is created and cached in memory" <>
             " for this amount of seconds multiplied by the number of files.",
         suggestions: [60]
@@ -3050,7 +3050,7 @@ config :pleroma, :config_description, [
               key: :max_waiting,
               type: :integer,
               description:
-                "Maximum number of requests waiting for other requests to finish. After this number is reached, the pool will start returning errrors when a new request is made",
+                "Maximum number of requests waiting for other requests to finish. After this number is reached, the pool will start returning errors when a new request is made",
               suggestions: [10]
             },
             %{
@@ -3316,7 +3316,7 @@ config :pleroma, :config_description, [
       %{
         key: :purge_after_days,
         type: :integer,
-        description: "Remove backup achives after N days",
+        description: "Remove backup archives after N days",
         suggestions: [30]
       },
       %{

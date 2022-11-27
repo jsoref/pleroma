@@ -118,7 +118,7 @@ defmodule Pleroma.Web.ActivityPub.UtilsTest do
       assert Enum.sort(cc) == expected_cc
     end
 
-    test "does not adress actor's follower address if the activity is not public", %{
+    test "does not address actor's follower address if the activity is not public", %{
       user: user,
       other_user: other_user,
       third_user: third_user
@@ -534,7 +534,7 @@ defmodule Pleroma.Web.ActivityPub.UtilsTest do
   end
 
   describe "get_cached_emoji_reactions/1" do
-    test "returns the data or an emtpy list" do
+    test "returns the data or an empty list" do
       object = insert(:note)
       assert Utils.get_cached_emoji_reactions(object) == []
 

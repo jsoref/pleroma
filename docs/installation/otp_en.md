@@ -4,9 +4,9 @@
 * A machine running Linux with GNU (e.g. Debian, Ubuntu) or musl (e.g. Alpine) libc and `x86_64`, `aarch64` or `armv7l` CPU, you have root access to. If you are not sure if it's compatible see [Detecting flavour section](#detecting-flavour) below
 * A (sub)domain pointed to the machine
 
-You will be running commands as root. If you aren't root already, please elevate your priviledges by executing `sudo su`/`su`.
+You will be running commands as root. If you aren't root already, please elevate your privileges by executing `sudo su`/`su`.
 
-While in theory OTP releases are possbile to install on any compatible machine, for the sake of simplicity this guide focuses only on Debian/Ubuntu and Alpine.
+While in theory OTP releases are possible to install on any compatible machine, for the sake of simplicity this guide focuses only on Debian/Ubuntu and Alpine.
 
 ### Detecting flavour
 
@@ -159,7 +159,7 @@ sleep 20 && curl http://localhost:4000/api/v1/instance
 su pleroma -s $SHELL -lc "./bin/pleroma stop"
 ```
 
-### Setting up nginx and getting Let's Encrypt SSL certificaties
+### Setting up nginx and getting Let's Encrypt SSL certificates
 
 #### Get a Let's Encrypt certificate
 ```sh
@@ -230,9 +230,9 @@ At this point if you open your (sub)domain in a browser you should see a 502 err
     systemctl enable pleroma
     ```
 
-If everything worked, you should see Pleroma-FE when visiting your domain. If that didn't happen, try reviewing the installation steps, starting Pleroma in the foreground and seeing if there are any errrors.
+If everything worked, you should see Pleroma-FE when visiting your domain. If that didn't happen, try reviewing the installation steps, starting Pleroma in the foreground and seeing if there are any errors.
 
-Questions about the installation or didn’t it work as it should be, ask in [#pleroma:libera.chat](https://matrix.to/#/#pleroma:libera.chat) via Matrix or **#pleroma** on **libera.chat** via IRC, you can also [file an issue on our Gitlab](https://git.pleroma.social/pleroma/pleroma-support/issues/new).
+Questions about the installation or didn’t it work as it should be, ask in [#pleroma:libera.chat](https://matrix.to/#/#pleroma:libera.chat) via Matrix or **#pleroma** on **libera.chat** via IRC, you can also [file an issue on our GitLab](https://git.pleroma.social/pleroma/pleroma-support/issues/new).
 
 ## Post installation
 
@@ -301,4 +301,4 @@ This will create an account withe the username of 'joeuser' with the email addre
 
 ## Questions
 
-Questions about the installation or didn’t it work as it should be, ask in [#pleroma:libera.chat](https://matrix.to/#/#pleroma:libera.chat) via Matrix or **#pleroma** on **libera.chat** via IRC, you can also [file an issue on our Gitlab](https://git.pleroma.social/pleroma/pleroma-support/issues/new).
+Questions about the installation or didn’t it work as it should be, ask in [#pleroma:libera.chat](https://matrix.to/#/#pleroma:libera.chat) via Matrix or **#pleroma** on **libera.chat** via IRC, you can also [file an issue on our GitLab](https://git.pleroma.social/pleroma/pleroma-support/issues/new).
